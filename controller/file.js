@@ -54,7 +54,7 @@ exports.uploadAndResizeFile = async (req, res) => {
         const originalFilePath = path.join(directoryPath, file.name);
         fs.writeFileSync(originalFilePath, file.data);
         console.log("file data=>", file.data, file.name);
-
+         console.log("file-size=>",file.size);
         const fileSizeInKB = file.size / 1024;
         console.log(fileSizeInKB);
         if (fileSizeInKB > targetSizeKB) {
